@@ -66,12 +66,3 @@ has_many :messages
 - belongs_to :user
 
 
-tags テーブル
-|Column|Type|Options|
-|------|----|-------|
-|tags_id|integer|null: false, foreign_key: true|
-|tags_name|string|null: false|
-- has_many :photos_tags
-- has_many :photos, through: photos_tags
-
-
