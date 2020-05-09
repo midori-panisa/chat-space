@@ -74,11 +74,4 @@ tags テーブル
 - has_many :photos_tags
 - has_many :photos, through: photos_tags
 
-photos_tags テーブル
-|Column|Type|Options|
-|------|----|-------|
-
-
-- belongs_to :photo
-- belongs_to :tag
 
