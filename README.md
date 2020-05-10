@@ -38,7 +38,7 @@ Things you may want to cover:
 ##messages テーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null:false|
+|body|text|
 |image|string|
 |group|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
