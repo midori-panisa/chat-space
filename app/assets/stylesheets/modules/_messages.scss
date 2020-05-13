@@ -1,4 +1,6 @@
 
+$section-color: #38aef0;
+$white-color: #ffffff;
 .wrapper{
   &__chat-side{
     width: 300px;
@@ -23,7 +25,7 @@
           width: 200px;
           float: left;
           align-items: center;
-          color: white;
+          color: $white-color;
           font-size: 16px;
           font-weight: bold;
         }
@@ -33,13 +35,13 @@
           background-color: #253141;
           display: flex;
           justify-content: flex-end;
-          color: #ffffff;
+          color: $white-color;
           list-style: none;
           li{
             margin-left: 5px;
             font-size: small;
             a{
-              color: #ffffff;
+              color: $white-color;
             }
           }
         }
@@ -53,14 +55,14 @@
       padding: 20px 20px 0;
       &__group-name{
         font-size: 15px;
-        color: #ffffff;
+        color: $white-color;
         padding-top: 20px;
         padding-left: 20px;
         font-weight: bold;
       }
       &__latest-message{
         font-size: 11px;
-        color: #ffffff;
+        color: $white-color;
         padding-left: 20px;
         font-weight: bold;
       }
@@ -73,7 +75,7 @@
 
     &__upper-info{
       padding: 0 40px;
-      background-color: #ffffff;
+      background-color: $white-color;
       height: 100px;
       display: flex;
       justify-content: space-between;
@@ -104,11 +106,11 @@
         line-height: 40px; 
         padding: 0 20px;
         margin-top: 28px;
-        border: solid 1px #38aef0;
+        border: solid 1px $section-color;
         position: absolute;
         right: 40px;
         a{
-          color: #38aef0;
+          color: $section-color;
           padding: 0 10px;
           text-decoration: none;
           font-size: 16px;
@@ -191,8 +193,8 @@
         margin-left: 15px;
         padding: 0 30px;
         cursor: pointer;
-        color: white;
-        background-color: #38aef0;
+        color: $white-color;
+        background-color: $section-color;
       }
     }
   }
