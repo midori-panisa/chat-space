@@ -1,0 +1,44 @@
+.wrapper__chat-main
+  .wrapper__chat-main__upper-info
+    .wrapper__chat-main__upper-info__left-box
+      %h2.wrapper__chat-main__upper-info__left-box__current-group
+        = "test"
+      %ul.wrapper__chat-main__upper-info__left-box__member-list
+        ="Member:"
+        %li.wrapper__chat-main__upper-info__left-box__member-list__member
+          ="miba"
+    .wrapper__chat-main__upper-info__edit-btn
+      =link_to '#' do
+        ="Edit"
+  .wrapper__chat-main__message-list
+    .wrapper__chat-main__message-list__upper-info
+      %p.wrapper__chat-main__message-list__upper-info__talker
+        ="miba"
+      %p.wrapper__chat-main__message-list__upper-info__date
+        ="2020/05/13(Wed)10:16:30"
+    .wrapper__chat-main__message-list__lower-info
+      %p.wrapper__chat-main__message-list__lower-info__text
+        ="おはよう!!"
+
+    .wrapper__chat-main__message-list__upper-info2
+      %p.wrapper__chat-main__message-list__upper-info2__talker
+        ="mi"
+      %p.wrapper__chat-main__message-list__upper-info2__date
+        ="2020/05/13(Wed)10:17:30"
+    .wrapper__chat-main__message-list__lower-info2
+      %p.wrapper__chat-main__message-list__lower-info2__text
+        ="さようなら"
+
+  .wrapper__chat-main__message-form
+    %form.wrapper__chat-main__message-form__new-text
+      %input{type: "text", class: 'wrapper__chat-main__message-form__new-text__text', placeholder: 'type a message'}
+      %label{class: 'wrapper__chat-main__message-form__new-text__image'}
+        = icon('fas', 'image')
+        %input{type: "file", class: "wrapper__chat-main__message-form__new-text__image__file"}
+    %input{type: "submit", value: "Send", class: "wrapper__chat-main__message-form__submit-btn"}
+
+
+
+
+
+

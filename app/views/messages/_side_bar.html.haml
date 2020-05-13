@@ -1,0 +1,21 @@
+.wrapper__chat-side
+  .wrapper__chat-side__side-header
+    .wrapper__chat-side__side-header__box
+      %p.wrapper__chat-side__side-header__box__user-name
+        ="miba"
+      %ul.wrapper__chat-side__side-header__box__menu
+        %li.wrapper__chat-side__side-header__box__menu__edit-user
+          = link_to "#"do
+            = icon('fas', 'edit')
+        %li.wrapper__chat-side__side-header__boc__menu__new-group
+          =link_to "#"do
+            =icon('fas', 'cog')
+
+
+  .wrapper__chat-side__groups
+    %p.wrapper__chat-side__groups__group-name
+      = "techcamp"
+    %p.wrapper__chat-side__groups__latest-message
+      = "まだメッセージがありません"
+
+  
