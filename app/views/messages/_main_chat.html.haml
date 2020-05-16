@@ -2,40 +2,24 @@
   .wrapper__chat-main__upper-info
     .wrapper__chat-main__upper-info__left-box
       %h2.wrapper__chat-main__upper-info__left-box__current-group
-        = "test"
+        = @group.name
       %ul.wrapper__chat-main__upper-info__left-box__member-list
         ="Member:"
-        %li.wrapper__chat-main__upper-info__left-box__member-list__member
-          ="miba"
+        - @group.users.each do |user|
+          %li.wrapper__chat-main__upper-info__left-box__member-list__member
+            = user.name
     .wrapper__chat-main__upper-info__edit-btn
-      =link_to '#' do
-        ="Edit"
-  .wrapper__chat-main__message-list
-    .wrapper__chat-main__message-list__upper-info
-      %p.wrapper__chat-main__message-list__upper-info__talker
-        ="miba"
-      %p.wrapper__chat-main__message-list__upper-info__date
-        ="2020/05/13(Wed)10:16:30"
-    .wrapper__chat-main__message-list__lower-info
-      %p.wrapper__chat-main__message-list__lower-info__text
-        ="おはよう!!"
-
-    .wrapper__chat-main__message-list__upper-info2
-      %p.wrapper__chat-main__message-list__upper-info2__talker
-        ="mi"
-      %p.wrapper__chat-main__message-list__upper-info2__date
-        ="2020/05/13(Wed)10:17:30"
-    .wrapper__chat-main__message-list__lower-info2
-      %p.wrapper__chat-main__message-list__lower-info2__text
-        ="さようなら"
-
+      =link_to "Edit", edit_group_path(@group.id) 
+  .wrapper__chat-main__messages
+    = render @messages
   .wrapper__chat-main__message-form
-    %form.wrapper__chat-main__message-form__new-text
-      %input{type: "text", class: 'wrapper__chat-main__message-form__new-text__text', placeholder: 'type a message'}
-      %label{class: 'wrapper__chat-main__message-form__new-text__image'}
-        = icon('fas', 'image')
-        %input{type: "file", class: "wrapper__chat-main__message-form__new-text__image__file"}
-    %input{type: "submit", value: "Send", class: "wrapper__chat-main__message-form__submit-btn"}
+    = form_for [@group, @message] do |f|
+      .wrapper__chat-main__message-form__new-text
+        = f.text_field :content, class: 'wrapper__chat-main__message-form__new-text__text', placeholder: 'type a message'
+        = f.label :image, class: 'wrapper__chat-main__message-form__new-text__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: "wrapper__chat-main__message-form__new-text__image__file"
+        = f.submit 'Send', class: "wrapper__chat-main__message-form__new-text__submit-btn"
 
 
 
