@@ -11,13 +11,14 @@
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'icon')
 
+
   .wrapper__chat-side__groups
     - current_user.groups.each do |group|
-      .wrapper__chat-side__groups__group
-        =link_to group_messages_path(group) do
-          %p.wrapper__chat-side__groups__group__group-name
+      .group
+        =link_to "#" do
+          .group__name
             = group.name
-          %p.wrapper__chat-side__groups__group__group-latest-message
-            = group.show_last_message
+          .group__message
+            ="メッセージはまだありません。"
 
   
