@@ -3,7 +3,7 @@
     %p.wrapper__chat-main__messages__message__upper-info__talker
       = message.user.name
     %p.wrapper__chat-main__messages__message__upper-info__date
-      = message.created_at.strftime("%Y年/%m月/%d日 %H時%M分")
+      = message.created_at.to_s(:datetime)
   .wrapper__chat-main__messages__message__lower-info
     %p.wrapper__chat-main__messages__message__lower-info__text
       = message.content

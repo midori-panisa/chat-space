@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
+    # user.jsで受け取った[:keyword]の内容で条件分岐
+    # [:keyword]の中身がない時
     return nil if params[:keyword] == ""
+
+    # [:keyword]の中身がある時、LIKE句を使った曖昧検索をする
     @users = User.where(['name like ?', "%#{params[:keyword]}%"]).where.not(id: current_user.id).limit(10)
     respond_to do |format|
       format.html
