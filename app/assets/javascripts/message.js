@@ -2,44 +2,40 @@ $(function(){
   function buildHTML(message){
     if ( message.image ){
       var html = 
-        `<div class=".wrapper__chat-main__messages">
-          <div class=".wrapper__chat-main__messages__message">
-            <div class=".wrapper__chat-main__messages__message__upper-info">
-              <p class=".wrapper__chat-main__messages__message__upper-info__talker">
-                ${message.user_name}
-              </p>
-              <p class=".wrapper__chat-main__messages__message__upper-info__date">
-                ${message.time}
-              </p>
-            </div>
-            <div class=".wrapper__chat-main__messages__message__lower-info">
-              <p class=".wrapper__chat-main__messages__message__lower-info__text">
-                ${message.content}
-              </p>
-              <p class=".wrapper__chat-main__messages__message__lower-info__image">
-                ${message.image.url}
-              <p>
-            </div>
+        `<div class="wrapper__chat-main__messages__message" data-message-id="${message.id}">
+          <div class="wrapper__chat-main__messages__message__upper-info">
+            <p class="wrapper__chat-main__messages__message__upper-info__talker">
+              ${message.user_name}
+            </p>
+            <p class="wrapper__chat-main__messages__message__upper-info__date">
+              ${message.time}
+            </p>
+          </div>
+          <div class="wrapper__chat-main__messages__message__lower-info">
+            <p class="wrapper__chat-main__messages__message__lower-info__text">
+              ${message.content}
+            </p>
+            <p class="wrapper__chat-main__messages__message__lower-info__image">
+              ${message.image.url}
+            <p>
           </div>
         </div>`
       return html;
     } else {
       var html = 
-        `<div class=".wrapper__chat-main__messages">
-          <div class=".wrapper__chat-main__messages__message">
-            <div class=".wrapper__chat-main__messages__message__upper-info">
-              <p class=".wrapper__chat-main__messages__message__upper-info__talker">
-                ${message.user_name}
-              </p>
-              <p class=".wrapper__chat-main__messages__message__upper-info__date">
-                ${message.time}
-              </p>
-            </div>
-            <div class=".wrapper__chat-main__messages__message__lower-info">
-              <p class=".wrapper__chat-main__messages__message__lower-info__text">
-                ${message.content}
-              </p>
-            </div>
+        `<div class="wrapper__chat-main__messages__message" data-message-id="${message.id}">
+          <div class="wrapper__chat-main__messages__message__upper-info">
+            <p class="wrapper__chat-main__messages__message__upper-info__talker">
+              ${message.user_name}
+            </p>
+            <p class="wrapper__chat-main__messages__message__upper-info__date">
+              ${message.time}
+            </p>
+          </div>
+          <div class="wrapper__chat-main__messages__message__lower-info">
+            <p class="wrapper__chat-main__messages__message__lower-info__text">
+              ${message.content}
+            </p>
           </div>
         </div>`
       return html;
@@ -78,5 +74,33 @@ $(function(){
     .fail(function(){
       alert("メッセージ送信に失敗しました");
     })
-  })
+  });
+  var reloadMessages = function(){
+    // 最新メッセージidを取得
+    var last_message_id = $('.wrapper__chat-main__messages__message:last').data("message-id");
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages){
+      if (messages.length !== 0){
+        // 追加されたHTMLが入る
+        var insertHTML = '';
+        messages.forEach(function (message){
+          insertHTML += buildHTML(message)
+        });
+        $('.wrapper__chat-main__messages').append(insertHTML);
+        $('.wrapper__chat-main__messages').animate({ scrollTop: $('.wrapper__chat-main__messages')[0].scrollHeight});
+      }
+
+    })
+    .fail(function(){
+      alert('error');
+    });
+  };
+  if (document.location.href.match(/\/groups\/\d+\/messages/)){
+    setInterval(reloadMessages, 7000);
+  }
 });
