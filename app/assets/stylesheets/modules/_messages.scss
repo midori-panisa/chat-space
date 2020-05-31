@@ -3,14 +3,12 @@ $section-color: #38aef0;
 $white-color: #ffffff;
 .wrapper{
   &__chat-side{
-    width: 300px;
     float: left;
 
     &__side-header{
       background-color: #253141;
       height: 100px;
       display: flex;
-      width: 300px;
       align-items: center;
       justify-content: center;
 
@@ -50,9 +48,8 @@ $white-color: #ffffff;
     }
     &__groups{
       background-color: #2f3e51;
-      width: 300px;
-      height: 100vh;
-      display: block;
+      height: calc(100vh - 100px);
+      overflow: scroll;
       padding: 20px 20px 0;
       &__group{
         margin-bottom: 40px;
@@ -66,9 +63,9 @@ $white-color: #ffffff;
           font-size: 11px;
         }
       }
-
     }
   } 
+
 
   &__chat-main{
     width: calc(100vw - 300px);
