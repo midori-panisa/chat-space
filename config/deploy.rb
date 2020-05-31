@@ -17,7 +17,7 @@ set :keep_releases, 5
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    invole 'unicorn:restart'
+    invoke 'unicorn:restart'
   end
 end
 # Default branch is :master
