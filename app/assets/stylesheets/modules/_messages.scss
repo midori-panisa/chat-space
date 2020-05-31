@@ -4,7 +4,6 @@ $white-color: #ffffff;
 .wrapper{
   &__chat-side{
     float: left;
-
     &__side-header{
       background-color: #253141;
       height: 100px;
@@ -26,6 +25,7 @@ $white-color: #ffffff;
           color: $white-color;
           font-size: 16px;
           font-weight: bold;
+          padding-left: 10px;
         }
 
         &__menu{
@@ -35,6 +35,7 @@ $white-color: #ffffff;
           justify-content: flex-end;
           color: $white-color;
           list-style: none;
+          padding-right: 10px;
           li{
             margin-left: 5px;
             font-size: small;
