@@ -6,8 +6,7 @@
       = message.created_at.to_s(:datetime)
   .wrapper__chat-main__messages__message__lower-info
     %p.wrapper__chat-main__messages__message__lower-info__text
-      = message.content
-      - if message.image.present?
-        %p.wrapper__chat-main__messages__message__lower-info__image
+      - if message.content.present?
         = message.content
-        = image_tag message.image.url, class: 'lower-info__image' if message.image.present?
+    %p.wrapper__chat-main__messages__message__lower-info__image
+      = image_tag message.image.url, class: 'lower-info__image' if message.image.present?

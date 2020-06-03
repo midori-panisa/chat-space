@@ -1,5 +1,6 @@
 $(function(){
   function buildHTML(message){
+    console.log(message)
     if ( message.image ){
       var html = 
         `<div class="wrapper__chat-main__messages__message" data-message-id="${message.id}">
@@ -15,9 +16,7 @@ $(function(){
             <p class="wrapper__chat-main__messages__message__lower-info__text">
               ${message.content}
             </p>
-            <p class="wrapper__chat-main__messages__message__lower-info__image">
-              ${message.image.url}
-            <p>
+            <img class="lower-info__image" src=${message.image}>
           </div>
         </div>`
       return html;
