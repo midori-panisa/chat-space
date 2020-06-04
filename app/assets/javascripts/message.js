@@ -64,10 +64,11 @@ $(function(){
       // メッセージを送信した時にclass=.wrapper__chat-main__messagesに入れるようにする
       $('.wrapper__chat-main__messages').append(html);
       $('.wrapper__chat-main__messages').animate({ scrollTop: $('.wrapper__chat-main__messages')[0].scrollHeight});
-      // メッセージと画像を一気にリセット（初期値に戻す）
-      $('#new_message')[0].reset();
       // 連続で送信ボタンを押せるようにした
       $('.wrapper__chat-main__message-form__new-text__submit-btn').prop("disabled", false);
+      // メッセージと画像を一気にリセット（初期値に戻す）
+      $('#new_message')[0].reset();
+
     })
     // 非同期通信失敗時
     .fail(function(){
