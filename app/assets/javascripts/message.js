@@ -73,6 +73,7 @@ $(function(){
     // 非同期通信失敗時
     .fail(function(){
       alert("メッセージ送信に失敗しました");
+      $('.wrapper__chat-main__message-form__new-text__submit-btn').prop("disabled", false);
     })
   });
   var reloadMessages = function(){
@@ -98,6 +99,7 @@ $(function(){
     })
     .fail(function(){
       alert('error');
+
     });
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)){
