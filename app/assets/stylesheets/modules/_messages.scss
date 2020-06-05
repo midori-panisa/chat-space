@@ -60,9 +60,9 @@ $white-color: #ffffff;
           font-size: 15px;
           margin-bottom: 5px;
         }
-        &__latest-message{
-          font-size: 11px;
-        }
+          &__latest-message{
+            font-size: 11px;
+          }
       }
     }
   } 
@@ -71,6 +71,7 @@ $white-color: #ffffff;
   &__chat-main{
     width: calc(100vw - 300px);
     float: left;
+
     &__main-header{
       padding: 0 40px;
       background-color: $white-color;
@@ -92,6 +93,9 @@ $white-color: #ffffff;
           font-size: 12px;
           color: #999999;
           display: flex;
+          &__member{
+            margin-right: 10px;
+          }
         
         }
       }
@@ -156,7 +160,7 @@ $white-color: #ffffff;
       box-sizing: border-box;
       position: fixed;
       bottom: 0;
-      width: calc(100% - 350px);
+      width: calc(100% - 250px);
       &__new-text{
         overflow: hidden;
         display: flex;
