@@ -69,9 +69,6 @@ $white-color: #ffffff;
 
 
   &__chat-main{
-    width: calc(100vw - 300px);
-    float: left;
-
     &__main-header{
       padding: 0 40px;
       background-color: $white-color;
@@ -160,7 +157,8 @@ $white-color: #ffffff;
       box-sizing: border-box;
       position: fixed;
       bottom: 0;
-      width: calc(100% - 250px);
+      right: 0;
+      width: calc(100% - 260px);
       &__new-text{
         overflow: hidden;
         display: flex;
