@@ -22,6 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
 ##user テーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -29,6 +30,7 @@ Things you may want to cover:
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |password confirmation|string|null: false|
+
 <!-- パスワードは8文字以上と制限をつける -->
 ### Association
 - has_many :groups_users
