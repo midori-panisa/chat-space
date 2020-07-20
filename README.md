@@ -18,11 +18,11 @@ Railsサーバーを立ち上げて下さい
 $ rails server
 
 ## 技術内容
-・言語：Ruby
-・テンプレートエンジン：Haml
-・フレームワーク：Ruby on Rails
+・言語:Ruby
+・テンプレートエンジン:Haml
+・フレームワーク:Ruby on Rails
 ・DB:MySQL
-・バージョン管理：Git
+・バージョン管理:Git
 
 ## 実装されている機能
 ・ユーザーログイン・ログアウト機能
